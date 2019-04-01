@@ -4,7 +4,8 @@
   "description": "A node.js library to get your external ip from multiple services",
   "main": "index.js",
   "scripts": {
-    "test": "node node_modules/mocha/bin/mocha"
+    "test": "node node_modules/mocha/bin/mocha",
+    "transpile": "node_modules/@babel/cli/bin/babel.js lib -d es2015 --copy-files --plugins @babel/plugin-proposal-object-rest-spread --presets @babel/preset-env"
   },
   "bin": {
     "external-ip": "lib/cli.js"
@@ -40,10 +41,14 @@
   "dependencies": {
     "ajv": "^6.5.4",
     "commander": "^2.19.0",
-    "simple-get": "^3.0.3"
+    "simple-get-es5": "git+https://github.com/CommittedDev/simple-get-es5.git"
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.1.0"
   }
 }
